@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app> <!--Scope your Angular application can operate in; Our app a name is 'myApp'-->
+<html ng-app="EmailApp"> <!--Scope your Angular application can operate in; Our app a name is 'myApp'-->
     <head>
 		<meta charset="utf-8">
 		<title>Fake Email App AngularJS</title>
@@ -8,19 +8,35 @@
 	
     <body>
 	
-        <div ng-controller="TestCtrl">
+        <!--This div is for testing the scope-->
+		<!--<div ng-controller="TestCtrl">
 			<h1>{{title}}</h1>
 			<input type="text" ng-model="title" placeholder="Write a title here">
-		</div>
+		</div>-->
 		
+		
+		<main class="main" role="main">
+		    <div class="wrapper">
+				<div ng-view></div> <!--ng-view directive: connect certain URLs of our application to scopes-->
+		    </div>
+		</main>
+		
+		<!-- Vendor libraries -->
         <script src="lib/jquery-v1.11.1.js"></script>
         <script src="lib/angular-v1.2.22.js"></script>
+		<script src="lib/angular-route-v1.2.22.js"></script>
 		
-		<script>
+		<!-- Javascript Files -->
+		<script src="js/app.js"></script>
+		<script src="js/controllers/inbox.js"></script>
+		
+		
+		<!--This script logic is for testing the scope-->
+		<!--<script>
 		    function TestCtrl($scope) {
 				$scope.title = 'Write a title here...';
 		    };
-		</script>
+		</script>-->
 		
     </body>
 </html>
