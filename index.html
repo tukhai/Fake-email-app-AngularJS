@@ -1,16 +1,26 @@
 <!doctype html>
-<html>
+<html ng-app> <!--Scope your Angular application can operate in; Our app a name is 'myApp'-->
     <head>
 		<meta charset="utf-8">
-		<title>AngularJS Email App</title>
-		
+		<title>Fake Email App AngularJS</title>
+		<link href="css/style.css" rel="stylesheet">
     </head>
 	
     <body>
 	
-        <div></div>
+        <div ng-controller="TestCtrl">
+			<h1>{{title}}</h1>
+			<input type="text" ng-model="title" placeholder="Write a title here">
+		</div>
 		
         <script src="lib/jquery-v1.11.1.js"></script>
         <script src="lib/angular-v1.2.22.js"></script>
+		
+		<script>
+		    function TestCtrl($scope) {
+				$scope.title = 'Write a title here...';
+		    };
+		</script>
+		
     </body>
 </html>
