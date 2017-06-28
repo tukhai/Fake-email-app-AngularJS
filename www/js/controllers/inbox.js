@@ -8,7 +8,7 @@ angular.module('EmailApp')
 			console.log('Inbox Loaded!')
 		});*/
 		
-	.controller('InboxCtrl',
+	/*.controller('InboxCtrl',
 		function InboxCtrl ( $scope, InboxFactory ) {
 			'use strict';
 			$scope.meta = {
@@ -23,4 +23,12 @@ angular.module('EmailApp')
 					    emails: jsonData
 					};
 				});
+		});*/
+		
+	.controller('InboxCtrl',
+		function InboxCtrl ( $scope ) {
+			'use strict';
+			$scope.meta = {
+				title: "My Inbox"
+			};
 		});
