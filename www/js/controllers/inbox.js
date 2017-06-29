@@ -25,10 +25,17 @@ angular.module('EmailApp')
 				});
 		});*/
 		
-	.controller('InboxCtrl',
+	/*.controller('InboxCtrl',
 		function InboxCtrl ( $scope ) {
 			'use strict';
 			$scope.meta = {
 				title: "My Inbox"
 			};
+		});*/
+		
+	.controller('InboxCtrl',
+		function InboxCtrl ( ) {
+		    'use strict';
+
+		    this.title = "My Inbox";
 		});
