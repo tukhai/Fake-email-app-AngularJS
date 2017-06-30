@@ -16,6 +16,13 @@ angular.module('EmailApp', [
 		    controller: 'EmailCtrl',
 		    controllerAs: 'email'
 		})
+		
+		.when('/deleted', {
+			templateUrl: 'views/deleted.html',
+			controller: 'DeletedCtrl', // map js to html scope
+			controllerAs: 'deleted'
+		})
+				
 		.otherwise({ // default
 			redirectTo: '/inbox'
 		});

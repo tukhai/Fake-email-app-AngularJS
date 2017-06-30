@@ -11,8 +11,8 @@
 		    Inbox View!	  
 		</h1>-->
 		<!--<h1>{{ meta.title }}</h1>-->
-		<h1 style="background-color: #505560"> {{ inbox.title }} </h1> <!--This is the "My Inbox" big button-->
-		<h1><a ng-href="/#/deleted">Deleted</a></h1>
+		<h1><a ng-href="/#/inbox">My Inbox</a></h1>
+		<h1 style="background-color: #505560"> {{ deleted.title }} </h1> <!--This is the "My Inbox" big button-->
 		<br>
 		<hr />
 		<br>
@@ -21,5 +21,5 @@
 	<!--<pre>{{ data.emails | json }}</pre>-->
 </div>	
 	<div class="module directive">
-		<inbox></inbox>
+		<deleted></deleted>
 	</div>

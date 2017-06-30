@@ -1,25 +1,24 @@
 /**
- * Factory: InboxFactory
+ * Factory: DeletedFactory
  */
 
 angular.module('EmailApp')
-	.factory('InboxFactory', function InboxFactory ($q, $http, $location) {
+	.factory('DeletedFactory', function DeletedFactory ($q, $http, $location) {
 		'use strict';
 		var exports = {};
 		
-		exports.messages = null;
-		exports.deletedMessages = [];
+		exports.messages = [];
 
 		exports.goToMessage = function(id) {
 			if ( angular.isNumber(id) ) {
 				// $location.path('inbox/email/' + id)
-				console.log('inbox/email/' + id)
-				$location.path('inbox/email/' + id)
+				//console.log('deleted/email/' + id)
+				//$location.path('deleted/email/' + id)
 			}
 		}
 
 		exports.deleteMessage = function (id, index) {
-			exports.deletedMessages.push(this.messages.splice(index, 1)[0]);
+			this.messages.splice(index, 1);
 		}
 
 		/*exports.getMessages = function () {
@@ -30,7 +29,7 @@ angular.module('EmailApp')
 		};*/
 		
 		/*Still extract data from json/emails.json, but use Promises to hook up the Factory and Controller*/
-		exports.getMessagesAsync = function () {
+		exports.getMessages = function () {
 			var deferred = $q.defer();
 			return $http.get('json/emails.json')
 				.success(function (data) {
@@ -41,14 +40,6 @@ angular.module('EmailApp')
 				    deferred.reject(data);
 				});
 			return deferred.promise;
-		};
-		
-		exports.getMessages = function() {
-			return exports.messages;
-		};
-		
-		exports.getDeletedMessages = function() {
-			return exports.deletedMessages;
 		};
 
 		return exports;
