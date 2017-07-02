@@ -6,40 +6,62 @@ angular.module('EmailApp')
 	.factory('ProfileFactory', function ProfileFactory ($q, $http, $location) {
 		'use strict';
 		var exports = {};
-		
-		exports.messages = [];
 
-		exports.goToMessage = function(id) {
-			if ( angular.isNumber(id) ) {
-				// $location.path('inbox/email/' + id)
-				//console.log('deleted/email/' + id)
-				//$location.path('deleted/email/' + id)
-			}
+		exports.save = function(newProfile) {
+			exports.profile = newProfile;
+		};
+
+		exports.get = function() {
+			return exports.profile;
 		}
-
-		exports.deleteMessage = function (id, index) {
-			this.messages.splice(index, 1);
-		}
-
-		/*exports.getMessages = function () {
-		  return $http.get('json/emails.json')
-			.error(function (data) {
-			  console.log('There was an error!', data);
-			});
-		};*/
 		
-		/*Still extract data from json/emails.json, but use Promises to hook up the Factory and Controller*/
-		exports.getMessages = function () {
-			var deferred = $q.defer();
-			return $http.get('json/emails.json')
-				.success(function (data) {
-				    exports.messages = data;
-				    deferred.resolve(data);
-				})
-				.error(function (data) {
-				    deferred.reject(data);
-				});
-			return deferred.promise;
+		exports.profile = {
+			avatarUrl: 'http://gazettereview.com/wp-content/uploads/2016/03/facebook-avatar.jpg',
+			name: 'Gabriel Chin',
+			title: 'UI designer, Product developer',
+			about: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultricies nibh eget magna gravida, aliquam interdum nisi fringilla ultricies nibh eget magna.',
+			phoneNumber: '+65 97712522',
+			emails: [
+				'gabriel.chin@clefintelligence.com', 
+				'gabrielchin@hotmail.com'
+			],
+			skills: [
+				{
+					name: 'ADOBE XD',
+					value: 30,
+					type: 'Professional'
+				},
+				{
+					name: 'ADOBE PHOTOSHOP',
+					value: 40,
+					type: 'Professional'
+				},
+				{
+					name: 'MICROSOFT EXCEL',
+					value: 50,
+					type: 'Professional'
+				},
+				{
+					name: 'C++',
+					value: 90,
+					type: 'Professional'
+				},
+				{
+					name: 'LEADERSHIP',
+					value: 70,
+					type: 'Personal'
+				},
+				{
+					name: 'COMMUNICATION',
+					value: 80,
+					type: 'Personal'
+				},
+				{
+					name: 'TEAMWORK',
+					value: 90,
+					type: 'Personal'
+				}
+			]
 		};
 
 		return exports;

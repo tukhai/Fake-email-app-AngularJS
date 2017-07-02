@@ -13,11 +13,8 @@ angular.module('EmailApp')
       controllerAs: 'deleted',
 
       controller: function (InboxFactory) {
-        
         this.messages = [];
-			
-		this.messages = InboxFactory.getDeletedMessages();
-		console.log(this.messages);
+        this.messages = InboxFactory.getDeletedMessages();
       },
 
       link: function (scope, element, attrs, ctrl) {
