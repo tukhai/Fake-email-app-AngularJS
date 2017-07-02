@@ -22,6 +22,12 @@ angular.module('EmailApp', [
 			controller: 'DeletedCtrl', // map js to html scope
 			controllerAs: 'deleted'
 		})
+		
+		.when('/profile', {
+			templateUrl: 'views/profile.html',
+			controller: 'ProfileCtrl', // map js to html scope
+			controllerAs: 'profile'
+		})
 				
 		.otherwise({ // default
 			redirectTo: '/inbox'

@@ -12,14 +12,14 @@
 		</h1>-->
 		<!--<h1>{{ meta.title }}</h1>-->
 		<h1><a ng-href="/#/inbox">My Inbox</a></h1>
-		<h1 style="background-color: #505560">{{ deleted.title }}</h1> <!--This is the "My Inbox" big button-->
+		<h1><a ng-href="/#/deleted">Deleted</a></h1> <!--This is the "My Inbox" big button-->
 		<br>
 		<hr />
 		<br>
-		<h1><a ng-href="/#/profile">My Profile</a></h1>
+		<h1 style="background-color: #505560">{{ profile.title }}</h1>
 	</div>
 	<!--<pre>{{ data.emails | json }}</pre>-->
 </div>	
 	<div class="module directive">
-		<deleted></deleted>
+		<profile></profile>
 	</div>
